@@ -11564,10 +11564,24 @@ vue-router@^3.0.1:
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.0.6.tgz#2e4f0f9cbb0b96d0205ab2690cfe588935136ac3"
   integrity sha512-Ox0ciFLswtSGRTHYhGvx2L44sVbTPNS+uD2kRISuo8B39Y79rOo0Kw0hzupTmiVtftQYCZl87mwldhh2L9Aquw==
 
+vue-server-renderer@2.6.9:
+  version "2.6.9"
+  resolved "http://registry.npm.taobao.org/vue-server-renderer/download/vue-server-renderer-2.6.9.tgz#74b970be513887ad255b2132daa1720a16af69ed"
+  integrity sha1-dLlwvlE4h60lWyEy2qFyChavae0=
+  dependencies:
+    chalk "^1.1.3"
+    hash-sum "^1.0.2"
+    he "^1.1.0"
+    lodash.template "^4.4.0"
+    lodash.uniq "^4.5.0"
+    resolve "^1.2.0"
+    serialize-javascript "^1.3.0"
+    source-map "0.5.6"
+
 vue-server-renderer@^2.5.16:
   version "2.6.10"
-  resolved "https://registry.yarnpkg.com/vue-server-renderer/-/vue-server-renderer-2.6.10.tgz#cb2558842ead360ae2ec1f3719b75564a805b375"
-  integrity sha512-UYoCEutBpKzL2fKCwx8zlRtRtwxbPZXKTqbl2iIF4yRZUNO/ovrHyDAJDljft0kd+K0tZhN53XRHkgvCZoIhug==
+  resolved "http://registry.npm.taobao.org/vue-server-renderer/download/vue-server-renderer-2.6.10.tgz#cb2558842ead360ae2ec1f3719b75564a805b375"
+  integrity sha1-yyVYhC6tNgri7B83GbdVZKgFs3U=
   dependencies:
     chalk "^1.1.3"
     hash-sum "^1.0.2"

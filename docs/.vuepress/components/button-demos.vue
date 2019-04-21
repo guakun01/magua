@@ -5,9 +5,7 @@
     <gua-button>默认文字</gua-button>
     <gua-button>默认文字</gua-button>
     <pre>
-      <code>
-        {{ content }}
-      </code>
+      <code> {{ content }} </code>
     </pre>
   </div>
 </template>
