@@ -1,7 +1,7 @@
 {
   "name": "magua-ui",
   "main": "dist/magua.umd.min.js",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "scripts": {
     "start": "yarn serve",
     "serve": "vue-cli-service serve",
