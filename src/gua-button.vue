@@ -2,7 +2,7 @@
   <button :class="{[type]: true, [`icon-${iconPosition}`]: true, loading}" class="gua-button" @click="$emit('click')">
     <g-icon class="icon" v-if="icon && !loading" :name="icon"></g-icon>
     <g-icon v-if="loading" class="loading icon" name="loading"></g-icon>
-    <div class="content">
+    <div class="gua-button-content">
       <slot></slot>
     </div>
   </button>
@@ -47,12 +47,12 @@ export default {
     fill: $lightDark;
   }
   > .icon { order: 1; margin-right: .3em; }
-  > .content { order: 2; }
+  > .gua-button-content { order: 2; }
   .loading {
     animation: spin 1s infinite linear;
   }
   &.icon-right {
-    > .content { order: 1; }
+    > .gua-button-content { order: 1; }
     > .icon { order: 2; margin-left: .3em; margin-right: 0; }
   }
   &:hover {
