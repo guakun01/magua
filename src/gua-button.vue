@@ -17,7 +17,13 @@ export default {
       default: '',
     },
     icon: String,
-    iconPosition: String,
+    iconPosition: {
+      type: String,
+      default: 'left',
+      validator (value) {
+        return (value === 'left' || value === 'right')
+      },
+    },
   }
 }
 </script>
