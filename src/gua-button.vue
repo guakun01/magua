@@ -1,49 +1,53 @@
 <template>
-  <button class="gua-button">按钮</button>
+  <button class="gua-button">默认文字</button>
 </template>
 
 <script>
 export default {}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+$font-size: 14px;
+$button-height: 30px;
+$border-radius: 2px;
+/*下面是颜色的定义*/
 /*主色*/
-body, .dark {
-  color: #4c5161; }
+$blue: #3187f6;
+$darkBlue: #2c79dc;
+$lightBlue: #5593fa;
 
-/*蓝色*/
-a, .blue, a.dark:hover {
-  color: #2486ff; }
+/*辅色*/
+$dark: #333;
 
-/*hover蓝色*/
-a:hover {
-  color: #0057c3; }
+/*红色*/
+$red: #e7422b;
 
-/*灰色*/
-.gray {
-  color: #a2a9b6; }
+/*绿色*/
+$green: #00a753;
+
+/*黄色*/
+$yellow: #ffbf00;
 
 /*白色*/
-.white {
-  color: #fff; }
-
-/* 绿色 */
-.green {
-  color: #01cf97; }
-
-/* 橘色 */
-.orange {
-  color: #f28c48; }
-
-/* 红色 */
-.red {
-  color: #f4615c; }
-
-/* 浅色 */
-.light {
-  color: #f7f9fa; }
+$white: #ffffff;
 
 .gua-button {
-  font-size: 12px;
+  font-size: $font-size;
+  line-height: 14px;
+  height: $button-height;
+  padding: 8px 16px;
+  border-radius: $border-radius;
+  border: 1px solid $blue;
+  background: $blue;
+  color: $white;
+  &:hover {
+    background: $lightBlue;
+  }
+  &:active {
+    background: $darkBlue;
+  }
+  &:focus {
+    outline: none;
+  }
 }
 </style>

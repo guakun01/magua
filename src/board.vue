@@ -15,6 +15,21 @@ export default {
 }
 </script>
 
+<style lang="scss" scoped>
+.title {
+  font-size: 24px;
+  font-weight: bold;
+}
+.box {
+  border: 1px solid gray;
+  display: block;
+  width: 700px;
+  min-height: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+</style>
+
 <style lang="scss">
   body {
     font: status-bar;

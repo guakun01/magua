@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Board from './Board.vue'
+import Board from './board'
 
 import GButton from './gua-button'
 
