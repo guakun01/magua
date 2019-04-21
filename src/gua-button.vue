@@ -1,5 +1,10 @@
 <template>
-    <button :class="type" class="gua-button">默认文字</button>
+  <button :class="type" class="gua-button">
+    <svg v-if="icon" class="gua-icon">
+      <use :xlink:href="`#i-${icon}`"></use>
+    </svg>
+    <slot></slot>
+  </button>
 </template>
 
 <script>
@@ -8,7 +13,9 @@ export default {
     type: {
       type: String,
       default: '',
-    }
+    },
+    icon: String,
+    iconPosition: String,
   }
 }
 </script>
@@ -54,6 +61,9 @@ $white: #ffffff;
   border: 1px solid $button-border-color;
   background: white;
   color: $lightDark;
+  svg {
+    fill: $lightDark;
+  }
   &:hover {
     background: $button-background-hover;
   }
@@ -66,6 +76,9 @@ $white: #ffffff;
   &.primary {
     background: $blue;
     color: $white;
+    svg {
+      fill: $white;
+    }
     border-color: $blue;
   }
   &.primary:hover {
@@ -76,6 +89,9 @@ $white: #ffffff;
   }
   &.normal {
     color: $blue;
+    svg {
+      fill: $blue;
+    }
     border-color: $blue;
   }
   &.normal:hover {
@@ -84,9 +100,15 @@ $white: #ffffff;
   &.normal:active {
     background: $blue;
     color: $white;
+    svg {
+      fill: $white;
+    }
   }
   &.danger {
     color: $red;
+    svg {
+      fill: $red;
+    }
     border-color: $red;
   }
   &.danger:hover {
@@ -95,6 +117,9 @@ $white: #ffffff;
   &.danger:active {
     background: $red;
     color: $white;
+    svg {
+      fill: $white;
+    }
   }
 }
 </style>

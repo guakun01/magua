@@ -4,19 +4,28 @@
     <h1 class="title">按钮</h1>
     <div class="box">
       <div class="line">
-        <gua-button type="primary"></gua-button>
+        <gua-button type="primary" icon="settings">
+        </gua-button>
+        <gua-button type="primary">
+        </gua-button>
       </div>
       <div class="line">
+        <gua-button type="normal" icon="settings">
+        </gua-button>
         <gua-button type="normal"></gua-button>
       </div>
       <div class="line">
+        <gua-button icon="settings">
+        </gua-button>
         <gua-button></gua-button>
       </div>
       <div class="line">
+        <gua-button type="danger" icon="settings">
+        </gua-button>
         <gua-button type="danger"></gua-button>
       </div>
       <div class="line">
-        <gua-button></gua-button>
+        <gua-button type="link"></gua-button>
       </div>
     </div>
   </div>
@@ -43,11 +52,19 @@ export default {
   padding: 20px;
   .line {
     margin: 10px 0;
+    .gua-button + .gua-button {
+      margin-left: 16px;
+    }
   }
 }
+
 </style>
 
 <style lang="scss">
+  .gua-icon {
+    width: 1em;
+    height: 1em;
+  }
   body {
     font: status-bar;
     font-size: 12px;
