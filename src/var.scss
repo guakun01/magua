@@ -1,0 +1,35 @@
+$font-size: 14px;
+$button-height: 30px;
+$border-radius: 2px;
+/*下面是一些基本动画的定义*/
+@keyframes spin {
+  from{ transform: rotate(-360deg); }
+  to { transform: rotate(0); }
+}
+/*下面是颜色的定义*/
+/*主色*/
+$blue: #3187f6;
+$darkBlue: #2c79dc;
+$lightBlue: #5593fa;
+$lightestBlue: #ebf3ff;
+
+/*辅色*/
+$dark: #333;
+$lightDark: #666;
+$lightlightDark: #999;
+$lightlightlightDark: #ccc;
+$button-border-color: #d9d9d9;
+$button-background-hover: #f4f4f4;
+
+/*红色*/
+$red: #e7422b;
+$lightestRed: #fcecea;
+
+/*绿色*/
+$green: #00a753;
+
+/*黄色*/
+$yellow: #ffbf00;
+
+/*白色*/
+$white: #ffffff;
