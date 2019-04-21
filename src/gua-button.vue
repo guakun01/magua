@@ -1,9 +1,11 @@
 <template>
-  <button :class="type" class="gua-button">
+  <button :class="{[type]: true, [`icon-${iconPosition}`]: true}" class="gua-button">
     <svg v-if="icon" class="gua-icon">
       <use :xlink:href="`#i-${icon}`"></use>
     </svg>
-    <slot></slot>
+    <div class="content">
+      <slot></slot>
+    </div>
   </button>
 </template>
 
@@ -52,17 +54,18 @@ $yellow: #ffbf00;
 /*白色*/
 $white: #ffffff;
 
-.gua-button {
-  font-size: $font-size;
-  line-height: 14px;
-  height: $button-height;
-  padding: 8px 16px;
-  border-radius: $border-radius;
-  border: 1px solid $button-border-color;
-  background: white;
-  color: $lightDark;
+.gua-button { font-size: $font-size; line-height: 14px; height: $button-height;
+  padding: 0 16px; border-radius: $border-radius; border: 1px solid $button-border-color;
+  background: white; color: $lightDark; display: inline-flex; justify-content: center; align-items: center;
+  vertical-align: middle;
   svg {
     fill: $lightDark;
+  }
+  > .gua-icon { order: 1; margin-right: .3em; }
+  > .content { order: 2; }
+  &.icon-right {
+    > .content { order: 1; }
+    > .gua-icon { order: 2; margin-left: .3em; margin-right: 0; }
   }
   &:hover {
     background: $button-background-hover;

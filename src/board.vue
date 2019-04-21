@@ -5,27 +5,46 @@
     <div class="box">
       <div class="line">
         <gua-button type="primary" icon="settings">
+          默认文字
+        </gua-button>
+        <gua-button type="primary" icon="settings" icon-position="left">
+          默认文字
+        </gua-button>
+        <gua-button type="primary" icon="settings" icon-position="right">
+          默认文字
         </gua-button>
         <gua-button type="primary">
+          默认文字
         </gua-button>
       </div>
       <div class="line">
         <gua-button type="normal" icon="settings">
+          默认文字
         </gua-button>
-        <gua-button type="normal"></gua-button>
+        <gua-button type="normal">
+          默认文字
+        </gua-button>
       </div>
       <div class="line">
         <gua-button icon="settings">
+          默认文字
         </gua-button>
-        <gua-button></gua-button>
+        <gua-button>
+          默认文字
+        </gua-button>
       </div>
       <div class="line">
         <gua-button type="danger" icon="settings">
+          默认文字
         </gua-button>
-        <gua-button type="danger"></gua-button>
+        <gua-button type="danger">
+          默认文字
+        </gua-button>
       </div>
       <div class="line">
-        <gua-button type="link"></gua-button>
+        <gua-button type="link">
+          默认文字
+        </gua-button>
       </div>
     </div>
   </div>
