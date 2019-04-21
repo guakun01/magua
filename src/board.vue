@@ -81,9 +81,17 @@
 </template>
 
 <script>
+import GuaButton from './gua-button'
+import GuaButtonGroup from './gua-button-group'
+// import GuaIcon from './gua-icon'
 
 export default {
   name: 'MBoard',
+  components: {
+    GuaButton,
+    GuaButtonGroup,
+    // GuaIcon,
+  },
   data: () => {
     return {
       loading1: false,
