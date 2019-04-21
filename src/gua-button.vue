@@ -1,7 +1,7 @@
 <template>
   <button :class="{[type]: true, [`icon-${iconPosition}`]: true, loading}" class="gua-button" @click="$emit('click')">
-    <gua-icon class="icon" v-if="icon && !loading" :name="icon"></gua-icon>
-    <gua-icon v-if="loading" class="loading icon" name="loading"></gua-icon>
+    <g-icon class="icon" v-if="icon && !loading" :name="icon"></g-icon>
+    <g-icon v-if="loading" class="loading icon" name="loading"></g-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -9,7 +9,7 @@
 </template>
 
 <script>
-// import GIcon from './gua-icon'
+import GIcon from './gua-icon'
 
 export default {
   props: {
@@ -30,9 +30,9 @@ export default {
       default: false,
     },
   },
-  // components: {
-  //   GIcon,
-  // }
+  components: {
+    GIcon,
+  }
 }
 </script>
 
