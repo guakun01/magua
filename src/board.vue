@@ -7,6 +7,9 @@
         <gua-button type="primary" icon="settings">
           默认文字
         </gua-button>
+        <gua-button type="primary" icon="settings" :loading="loading1" @click="toggleLoading1">
+          默认文字
+        </gua-button>
         <gua-button type="primary" icon="settings" icon-position="left">
           默认文字
         </gua-button>
@@ -22,6 +25,9 @@
           默认文字
         </gua-button>
         <gua-button type="normal">
+          默认文字
+        </gua-button>
+        <gua-button type="normal" :loading="loading2" @click="toggleLoading2">
           默认文字
         </gua-button>
       </div>
@@ -54,6 +60,20 @@
 
 export default {
   name: 'MBoard',
+  data: () => {
+    return {
+      loading1: false,
+      loading2: false,
+    }
+  },
+  methods: {
+    toggleLoading1 () {
+      this.loading1 = !this.loading1
+    },
+    toggleLoading2 () {
+      this.loading2 = !this.loading2
+    },
+  }
 }
 </script>
 

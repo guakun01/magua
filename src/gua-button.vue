@@ -1,7 +1,7 @@
 <template>
-  <button :class="{[type]: true, [`icon-${iconPosition}`]: true}" class="gua-button">
-    <gua-icon class="icon" v-if="icon" :name="icon"></gua-icon>
-    <gua-icon class="loading" name="loading"></gua-icon>
+  <button :class="{[type]: true, [`icon-${iconPosition}`]: true}" class="gua-button" @click="$emit('click')">
+    <gua-icon class="icon" v-if="icon && !loading" :name="icon"></gua-icon>
+    <gua-icon v-if="loading" class="loading icon" name="loading"></gua-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -24,6 +24,10 @@ export default {
       validator (value) {
         return (value === 'left' || value === 'right')
       },
+    },
+    loading: {
+      type: Boolean,
+      default: false,
     },
   },
   // components: {
