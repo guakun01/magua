@@ -1,7 +1,6 @@
 {
   "name": "magua",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.0.1",
   "scripts": {
     "start": "yarn serve",
     "serve": "vue-cli-service serve",
