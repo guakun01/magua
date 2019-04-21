@@ -1,9 +1,16 @@
 <template>
-  <button class="gua-button">默认文字</button>
+    <button :class="type" class="gua-button">默认文字</button>
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    type: {
+      type: String,
+      default: '',
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -15,12 +22,19 @@ $border-radius: 2px;
 $blue: #3187f6;
 $darkBlue: #2c79dc;
 $lightBlue: #5593fa;
+$lightestBlue: #ebf3ff;
 
 /*辅色*/
 $dark: #333;
+$lightDark: #666;
+$lightlightDark: #999;
+$lightlightlightDark: #ccc;
+$button-border-color: #d9d9d9;
+$button-background-hover: #f4f4f4;
 
 /*红色*/
 $red: #e7422b;
+$lightestRed: #fcecea;
 
 /*绿色*/
 $green: #00a753;
@@ -37,17 +51,50 @@ $white: #ffffff;
   height: $button-height;
   padding: 8px 16px;
   border-radius: $border-radius;
-  border: 1px solid $blue;
-  background: $blue;
-  color: $white;
+  border: 1px solid $button-border-color;
+  background: white;
+  color: $lightDark;
   &:hover {
-    background: $lightBlue;
+    background: $button-background-hover;
   }
   &:active {
-    background: $darkBlue;
+    background: $lightlightlightDark;
   }
   &:focus {
     outline: none;
+  }
+  &.primary {
+    background: $blue;
+    color: $white;
+    border-color: $blue;
+  }
+  &.primary:hover {
+    background: $lightBlue;
+  }
+  &.primary:active {
+    background: $darkBlue;
+  }
+  &.normal {
+    color: $blue;
+    border-color: $blue;
+  }
+  &.normal:hover {
+    background: $lightestBlue;
+  }
+  &.normal:active {
+    background: $blue;
+    color: $white;
+  }
+  &.danger {
+    color: $red;
+    border-color: $red;
+  }
+  &.danger:hover {
+    background: $lightestRed;
+  }
+  &.danger:active {
+    background: $red;
+    color: $white;
   }
 }
 </style>

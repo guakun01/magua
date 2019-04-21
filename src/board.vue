@@ -3,7 +3,21 @@
     <div class="title">这是一个画板</div>
     <h1 class="title">按钮</h1>
     <div class="box">
-      <gua-button></gua-button>
+      <div class="line">
+        <gua-button type="primary"></gua-button>
+      </div>
+      <div class="line">
+        <gua-button type="normal"></gua-button>
+      </div>
+      <div class="line">
+        <gua-button></gua-button>
+      </div>
+      <div class="line">
+        <gua-button type="danger"></gua-button>
+      </div>
+      <div class="line">
+        <gua-button></gua-button>
+      </div>
     </div>
   </div>
 </template>
@@ -27,6 +41,9 @@ export default {
   min-height: 400px;
   margin: 0 auto;
   padding: 20px;
+  .line {
+    margin: 10px 0;
+  }
 }
 </style>
 
