@@ -80,10 +80,7 @@ export default {
 </style>
 
 <style lang="scss">
-  .gua-icon {
-    width: 1em;
-    height: 1em;
-  }
+
   body {
     font: status-bar;
     font-size: 12px;

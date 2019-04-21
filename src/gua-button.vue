@@ -1,8 +1,6 @@
 <template>
   <button :class="{[type]: true, [`icon-${iconPosition}`]: true}" class="gua-button">
-    <svg v-if="icon" class="gua-icon">
-      <use :xlink:href="`#i-${icon}`"></use>
-    </svg>
+    <gua-icon v-if="icon" :name="icon"></gua-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -10,6 +8,8 @@
 </template>
 
 <script>
+// import GIcon from './gua-icon'
+
 export default {
   props: {
     type: {
@@ -24,7 +24,10 @@ export default {
         return (value === 'left' || value === 'right')
       },
     },
-  }
+  },
+  // components: {
+  //   GIcon,
+  // }
 }
 </script>
 
