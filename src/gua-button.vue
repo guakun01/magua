@@ -1,5 +1,5 @@
 <template>
-  <button :class="{[type]: true, [`icon-${iconPosition}`]: true}" class="gua-button" @click="$emit('click')">
+  <button :class="{[type]: true, [`icon-${iconPosition}`]: true, loading}" class="gua-button" @click="$emit('click')">
     <gua-icon class="icon" v-if="icon && !loading" :name="icon"></gua-icon>
     <gua-icon v-if="loading" class="loading icon" name="loading"></gua-icon>
     <div class="content">
@@ -145,6 +145,30 @@ $white: #ffffff;
     svg {
       fill: $white;
     }
+  }
+  &.loading {
+    color: $white;
+    svg {
+      fill: $white;
+    }
+    background: $lightlightlightDark;
+    border-color: $lightlightlightDark;
+  }
+  &.loading:hover {
+    color: $white;
+    svg {
+      fill: $white;
+    }
+    background: $lightlightlightDark;
+    border-color: $lightlightlightDark;
+  }
+  &.loading:active {
+    color: $white;
+    svg {
+      fill: $white;
+    }
+    background: $lightlightlightDark;
+    border-color: $lightlightlightDark;
   }
 }
 </style>

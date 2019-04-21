@@ -68,10 +68,10 @@ export default {
   },
   methods: {
     toggleLoading1 () {
-      this.loading1 = !this.loading1
+      this.loading1 = true
     },
     toggleLoading2 () {
-      this.loading2 = !this.loading2
+      this.loading2 = true
     },
   }
 }
