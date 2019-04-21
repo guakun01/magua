@@ -1,11 +1,12 @@
 {
-  "name": "vue-cli-template",
+  "name": "magua",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "start": "yarn serve",
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build-old": "vue-cli-service build",
+    "build": "vue-cli-service build --target lib --name magua src/index.js",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit"
   },
