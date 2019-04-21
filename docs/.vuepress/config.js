@@ -1,4 +1,5 @@
 module.exports = {
+  base: "/magua/",
   title: '麻瓜',
   description: '快看, 麻瓜ui',
   themeConfig: {
