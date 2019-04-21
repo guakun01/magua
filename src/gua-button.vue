@@ -1,6 +1,7 @@
 <template>
   <button :class="{[type]: true, [`icon-${iconPosition}`]: true}" class="gua-button">
-    <gua-icon v-if="icon" :name="icon"></gua-icon>
+    <gua-icon class="icon" v-if="icon" :name="icon"></gua-icon>
+    <gua-icon class="loading" name="loading"></gua-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -35,6 +36,11 @@ export default {
 $font-size: 14px;
 $button-height: 30px;
 $border-radius: 2px;
+/*下面是一些基本动画的定义*/
+@keyframes spin {
+  from{ transform: rotate(-360deg); }
+  to { transform: rotate(0); }
+}
 /*下面是颜色的定义*/
 /*主色*/
 $blue: #3187f6;
@@ -70,11 +76,14 @@ $white: #ffffff;
   svg {
     fill: $lightDark;
   }
-  > .gua-icon { order: 1; margin-right: .3em; }
+  > .icon { order: 1; margin-right: .3em; }
   > .content { order: 2; }
+  .loading {
+    animation: spin 1s infinite linear;
+  }
   &.icon-right {
     > .content { order: 1; }
-    > .gua-icon { order: 2; margin-left: .3em; margin-right: 0; }
+    > .icon { order: 2; margin-left: .3em; margin-right: 0; }
   }
   &:hover {
     background: $button-background-hover;
