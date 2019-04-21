@@ -1,6 +1,10 @@
 import Vue from 'vue'
 import Board from './Board.vue'
 
+import GButton from './gua-button'
+
+Vue.component('gua-button', GButton)
+
 Vue.config.productionTip = false
 
 new Vue({
