@@ -10,7 +10,8 @@
     "build-old": "vue-cli-service build",
     "build": "vue-cli-service build --target lib --name magua src/index.js",
     "lint": "vue-cli-service lint",
-    "test:unit": "vue-cli-service test:unit"
+    "test:unit": "vue-cli-service test:unit",
+    "test": "vue-cli-service test:unit"
   },
   "dependencies": {
     "core-js": "^2.6.5",
