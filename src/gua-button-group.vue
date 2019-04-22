@@ -10,7 +10,7 @@ export default {
     for (let node of this.$el.children) {
       let name = node.nodeName.toLowerCase()
       if (name !== 'button') {
-        console.warn(`gua-button-group 的元素应该全是 gua-button, 但你写的是 ${name}`)
+        window.console.warn(`gua-button-group 的元素应该全是 gua-button, 但你写的是 ${name}`)
       }
     }
   },
