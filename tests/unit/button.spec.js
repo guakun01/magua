@@ -32,18 +32,20 @@ describe('gua-button.vue', () => {
     expect(useElements.length).to.eq(1)
     expect(useElements[0].getAttribute('xlink:href')).to.equal('#i-loading')
   })
-  xit('icon 的默认 order 是 1.', () => {
+  it('icon 的默认 order 是 1.', () => {
     const wrapper = mount(GuaButton, {
+      attachToDocument: true,
       propsData: {
         icon: 'settings',
       }
     })
     const vm = wrapper.vm
     const icon = vm.$el.querySelector('svg')
-    expect(getComputedStyle(icon).order).to.equal(1)
+    expect(getComputedStyle(icon).order).to.equal('1')
   })
-  xit('设置 iconPosition 可以改变 order.', () => {
+  it('设置 iconPosition 可以改变 order.', () => {
     const wrapper = mount(GuaButton, {
+      attachToDocument: true,
       propsData: {
         icon: 'settings',
         iconPosition: 'right',
@@ -51,7 +53,7 @@ describe('gua-button.vue', () => {
     })
     const vm = wrapper.vm
     const icon = vm.$el.querySelector('svg')
-    expect(getComputedStyle(icon).order).to.equal(2)
+    expect(getComputedStyle(icon).order).to.equal('2')
   })
   it('设置 type 可以改变 class.', () => {
     const wrapper = mount(GuaButton, {
