@@ -1,20 +1,22 @@
 <template>
-  <div style="border: 1px solid red;">
+  <div class="magua-date-picker" style="border: 1px solid red;">
     <input type="text" @focus="onFocusInput" @blur="onBlurInput">
     <div v-if="popVisible" class="magua-date-picker-pop">
       <div class="magua-date-picker-nav">
-        <span>
+        <span :class="c('prevYear', 'nav-item')">
           <g-icon name="jiantou_shangyiye_o" />
         </span>
-        <span>
+        <span :class="c('prevMonth', 'nav-item')">
           <g-icon name="left" />
         </span>
-        <span @click="onClickYear">2019年</span>
-        <span @click="onClickMonth">5月</span>
-        <span>
+        <span :class="c('yearAndMonth')">
+          <span @click="onClickYear">2019年</span>
+          <span @click="onClickMonth">5月</span>
+        </span>
+        <span :class="c('nextMonth', 'nav-item')">
           <g-icon name="right" />
         </span>
-        <span>
+        <span :class="c('nextMonth', 'nav-item')">
           <g-icon name="jiantou_xiayiye_o" />
         </span>
       </div>
@@ -23,12 +25,12 @@
         <div v-else-if="mode==='months'" class="magua-date-picker-content">月</div>
         <div v-else class="magua-date-picker-content">
           <div :class="c('weekDays')">
-            <span v-for="i in helper.range(0, 7)" :key="`d${i}`">
+            <span v-for="i in helper.range(0, 7)" :class="c('weekday')" :key="`d${i}`">
               {{weekDays[i]}}
             </span>
           </div>
           <div v-for="i in helper.range(1, 42/7 + 1)" :class="c('row')" :key="`r${i}`">
-            <span v-for="j in helper.range(1, 7 + 1)" :class="c('col')" :key="`c${j}`">
+            <span v-for="j in helper.range(1, 7 + 1)" :class="c('cell')" :key="`c${j}`">
               {{visibleDays[(i - 1) * 7 + j - 1].getDate()}}
             </span>
           </div>
@@ -79,8 +81,8 @@ export default {
   mounted () {
   },
   methods: {
-    c (className) {
-      return `magua-date-picke-${className}`
+    c (...classNames) {
+      return classNames.map(className => `magua-date-picker-${className}`)
     },
     onFocusInput () {
       this.popVisible = true
@@ -100,6 +102,25 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+@import "../var";
+.magua-date-picker {
+  &-pop {
+    width: 270px;
+    border: 1px solid;
+  }
+  &-cell, &-weekday, &-nav-item {
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &-nav {
+    display: flex;
+  }
+  &-yearAndMonth {
+    margin: auto;
+  }
+}
 </style>
