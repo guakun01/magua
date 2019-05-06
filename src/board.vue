@@ -1,139 +1,29 @@
 <template>
   <div id="board">
-    <div class="title">这是一个画板</div>
-    <h1 class="title">按钮</h1>
-    <div class="box">
-      <div class="line bgroup">
-        <gua-button-group>
-          <gua-button icon="left">上一页</gua-button>
-          <gua-button icon="right" icon-position="right">下一页</gua-button>
-        </gua-button-group>
-        <gua-button-group>
-          <gua-button icon="left">上一页</gua-button>
-          <gua-button>当前页</gua-button>
-          <gua-button icon="right" icon-position="right">下一页</gua-button>
-        </gua-button-group>
-      </div>
-      <div class="line">
-        <gua-button type="normal" icon="settings">
-          默认文字
-        </gua-button>
-        <gua-button type="normal">
-          默认文字
-        </gua-button>
-        <gua-button type="normal" :loading="loading2" @click="toggleLoading2">
-          默认文字
-        </gua-button>
-      </div>
-    </div>
-    <div class="box">
-      <div class="line">
-        <gua-button type="primary" icon="settings">
-          默认文字
-        </gua-button>
-        <gua-button type="primary" icon="settings" :loading="loading1" @click="toggleLoading1">
-          默认文字
-        </gua-button>
-        <gua-button type="primary" icon="settings" icon-position="left">
-          默认文字
-        </gua-button>
-        <gua-button type="primary" icon="settings" icon-position="right">
-          默认文字
-        </gua-button>
-        <gua-button type="primary">
-          默认文字
-        </gua-button>
-      </div>
-      <div class="line">
-        <gua-button type="normal" icon="settings">
-          默认文字
-        </gua-button>
-        <gua-button type="normal">
-          默认文字
-        </gua-button>
-        <gua-button type="normal" :loading="loading2" @click="toggleLoading2">
-          默认文字
-        </gua-button>
-      </div>
-      <div class="line">
-        <gua-button icon="settings">
-          默认文字
-        </gua-button>
-        <gua-button>
-          默认文字
-        </gua-button>
-      </div>
-      <div class="line">
-        <gua-button type="danger" icon="settings">
-          默认文字
-        </gua-button>
-        <gua-button type="danger">
-          默认文字
-        </gua-button>
-      </div>
-      <div class="line">
-        <gua-button type="link">
-          默认文字
-        </gua-button>
-      </div>
-    </div>
+    <g-date-picker></g-date-picker>
+    
   </div>
 </template>
 
 <script>
-import GuaButton from './gua-button'
-import GuaButtonGroup from './gua-button-group'
-// import GuaIcon from './gua-icon'
+import GDatePicker from './date-picker/date-picker'
 
 export default {
   name: 'MBoard',
   components: {
-    GuaButton,
-    GuaButtonGroup,
-    // GuaIcon,
+    GDatePicker,
   },
   data: () => {
-    return {
-      loading1: false,
-      loading2: false,
-    }
+    return {}
   },
-  methods: {
-    toggleLoading1 () {
-      this.loading1 = true
-    },
-    toggleLoading2 () {
-      this.loading2 = true
-    },
-  }
+  methods: {}
 }
 </script>
 
 <style lang="scss" scoped>
-.title {
-  font-size: 24px;
-  font-weight: bold;
+#board {
+  padding: 60px;
 }
-.box {
-  border: 1px solid gray;
-  display: block;
-  width: 700px;
-  min-height: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  .line:not(.bgroup) {
-    margin: 10px 0;
-    .gua-button + .gua-button {
-      margin-left: 16px;
-    }
-  }
-  .line.bgroup {
-    .gua-button-group + .gua-button-group {
-      margin-left: 8px;
-    }
-  }
-}
-
 </style>
 
 <style lang="scss">
