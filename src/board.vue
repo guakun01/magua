@@ -1,7 +1,7 @@
 <template>
   <div id="board">
     <g-date-picker></g-date-picker>
-    
+    <p>其他内容</p>
   </div>
 </template>
 

@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import GIcon from './gua-icon'
+import GIcon from './icon'
 
 export default {
   props: {
