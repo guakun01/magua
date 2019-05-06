@@ -23,7 +23,7 @@
         <div v-else-if="mode==='months'" class="magua-date-picker-content">月</div>
         <div v-else class="magua-date-picker-content">
           <div :class="c('weekDays')">
-            <span v-for="i in helper.range(1, 8)" :key="`d${i}`">
+            <span v-for="i in helper.range(0, 7)" :key="`d${i}`">
               {{weekDays[i]}}
             </span>
           </div>
@@ -57,42 +57,23 @@ export default {
       mode: 'days',
       value: new Date(),
       helper,
-      weekDays: {
-        1: '一',
-        2: '二',
-        3: '三',
-        4: '四',
-        5: '五',
-        6: '六',
-        7: '日',
-      }
+      weekDays: [ '日', '一', '二',  '三',  '四',  '五',  '六',]
     }
   },
   computed: {
     visibleDays () {
       let date = this.value
-    
       let first = helper.firstDayOfMonth(date)
       let last = helper.lastDayOfMonth(date)
-
-      let array = []
       let [year, month, day] = helper.getYearMonthDate(date)
-      for (let i = first.getDate(); i <= last.getDate(); i++) {
-        array.push(new Date(year, month, i))
+      let weekdayOfFirst = first.getDay()
+      // 一天是 86400s
+      let x = first - weekdayOfFirst * 3600 * 24 * 1000
+      let array = []
+      for (let i = 0; i < 42; i++) {
+        array.push(new Date(x + i * 3600 * 24 * 1000))
       }
-      let n = first.getDay() === 0 ? 6 : first.getDay() - 1 
-      let array2 = []
-      for (let i = 0; i < n; i++) {
-        array2.push(new Date(year, month, -i))
-      }
-      array2 = array2.reverse()
-      let array3 = []
-      let m = 42 - array.length - array2.length
-      for (let i = 1; i <= m; i++) {
-        array3.push(new Date(year, month + 1, i))
-      }
-      let array4 = [...array2, ...array, ...array3]
-      return array4
+      return array
     }
   },
   mounted () {
