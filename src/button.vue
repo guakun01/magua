@@ -12,6 +12,7 @@
 import GIcon from './icon'
 
 export default {
+  name: 'MaguaButton',
   props: {
     type: {
       type: String,

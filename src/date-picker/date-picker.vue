@@ -48,7 +48,7 @@ import GIcon from '../icon'
 import helper from './helper'
 
 export default {
-  name: 'MaGuaDatePicker',
+  name: 'MagkuaDatePicker',
   components: {
     GIcon,
   },

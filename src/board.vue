@@ -1,17 +1,16 @@
 <template>
   <div id="board">
-    <g-date-picker></g-date-picker>
-    <p>其他内容</p>
+    <g-input />
   </div>
 </template>
 
 <script>
-import GDatePicker from './date-picker/date-picker'
+import GInput from './input'
 
 export default {
-  name: 'MBoard',
+  name: 'MaguaBoard',
   components: {
-    GDatePicker,
+    GInput,
   },
   data: () => {
     return {}
