@@ -40,8 +40,8 @@ export default {
 <style lang="scss" scoped>
 @import "var";
 
-.gua-button { font-size: $font-size; line-height: 14px; height: $button-height;
-  padding: 0 16px; border-radius: $border-radius; border: 1px solid $button-border-color;
+.gua-button { font-size: $font-size; line-height: 14px; height: $height;
+  padding: 0 16px; border-radius: $border-radius; border: 1px solid $border-color;
   background: white; color: $lightDark; display: inline-flex; justify-content: center; align-items: center;
   vertical-align: middle;
   svg {
