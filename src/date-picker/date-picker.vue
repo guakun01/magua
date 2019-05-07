@@ -59,15 +59,13 @@ export default {
       mode: 'days',
       value: new Date(),
       helper,
-      weekDays: [ '日', '一', '二',  '三',  '四',  '五',  '六',]
+      weekDays: ['日', '一', '二', '三', '四', '五', '六']
     }
   },
   computed: {
     visibleDays () {
       let date = this.value
       let first = helper.firstDayOfMonth(date)
-      let last = helper.lastDayOfMonth(date)
-      let [year, month, day] = helper.getYearMonthDate(date)
       let weekdayOfFirst = first.getDay()
       // 一天是 86400s
       let x = first - weekdayOfFirst * 3600 * 24 * 1000

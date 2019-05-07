@@ -1,13 +1,11 @@
 export default {
-  firstDayOfMonth (date) {
-    let [year, month, day] = getYearMonthDate(date)
-    let firstDay = new Date(year, month, 1)
-    return firstDay
+  firstDayOfMonth: function (date) {
+    let [year, month] = getYearMonthDate(date)
+    return new Date(year, month, 1)
   },
   lastDayOfMonth (date) {
-    let [year, month, day] = getYearMonthDate(date)
-    let lastDay = new Date(year, month + 1, 0)
-    return lastDay
+    let [year, month] = getYearMonthDate(date)
+    return new Date(year, month + 1, 0)
   },
   // [begin, end)
   range (begin, end) {
