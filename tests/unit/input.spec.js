@@ -11,58 +11,85 @@ describe('g-input.vue', () => {
   it('存在.', () => {
     expect(GInput).to.be.exist
   })
-  // it('可以设置 icon.', () => {
-  //   const wrapper = mount(GuaButton, {
-  //     propsData: {
-  //       icon: 'settings',
-  //     }
-  //   })
-  //   const useElement = wrapper.find('use')
-  //   expect(useElement.attributes()['href']).to.equal('#i-settings')
-  // })
-  // it('可以设置 loading.', () => {
-  //   const wrapper = mount(GuaButton, {
-  //     propsData: {
-  //       icon: 'settings',
-  //       loading: true,
-  //     }
-  //   })
-  //   const vm = wrapper.vm
-  //   const useElements = vm.$el.querySelectorAll('use')
-  //   expect(useElements.length).to.eq(1)
-  //   expect(useElements[0].getAttribute('xlink:href')).to.equal('#i-loading')
-  // })
-  // it('icon 的默认 order 是 1.', () => {
-  //   const wrapper = mount(GuaButton, {
-  //     attachToDocument: true,
-  //     propsData: {
-  //       icon: 'settings',
-  //     }
-  //   })
-  //   const vm = wrapper.vm
-  //   const icon = vm.$el.querySelector('svg')
-  //   expect(getComputedStyle(icon).order).to.equal('1')
-  // })
-  // it('设置 iconPosition 可以改变 order.', () => {
-  //   const wrapper = mount(GuaButton, {
-  //     attachToDocument: true,
-  //     propsData: {
-  //       icon: 'settings',
-  //       iconPosition: 'right',
-  //     }
-  //   })
-  //   const vm = wrapper.vm
-  //   const icon = vm.$el.querySelector('svg')
-  //   expect(getComputedStyle(icon).order).to.equal('2')
-  // })
-  // it('设置 type 可以改变 class.', () => {
-  //   const wrapper = mount(GuaButton, {
-  //     propsData: {
-  //       type: 'primary',
-  //     }
-  //   })
-  //   expect(wrapper.classes()).contain('primary')
-  // })
+  describe('props', () => {
+    it('可以接受 value', () => {
+      const wrapper = mount(GInput, {
+        propsData: {
+          value: 'gua1234',
+        }
+      })
+      const inputElement = wrapper.vm.$el.querySelector('input')
+      expect(inputElement.value).to.equal('gua1234')
+    })
+    it('可以接受 disabled', () => {
+      const wrapper = mount(GInput, {
+        propsData: {
+          disabled: true,
+        }
+      })
+      const inputElement = wrapper.vm.$el.querySelector('input')
+      expect(inputElement.disabled).to.equal(true)
+    })
+    it('可以接受 readonly', () => {
+      const wrapper = mount(GInput, {
+        propsData: {
+          readonly: true,
+        }
+      })
+      const inputElement = wrapper.vm.$el.querySelector('input')
+      expect(inputElement.readOnly).to.equal(true)
+    })
+    it('可以接受 error', () => {
+      const wrapper = mount(GInput, {
+        propsData: {
+          error: '你错了',
+        }
+      })
+      const useElement = wrapper.vm.$el.querySelector('use')
+      expect(useElement.getAttribute('xlink:href')).to.equal('#i-error')
+      const errorMessage = wrapper.vm.$el.querySelector('.errorMessage')
+      expect(errorMessage.innerText).to.equal('你错了')
+    })
+  })
+  describe('event', () => {
+    it('支持 change 事件', () => {
+      const vm = mount(GInput, {}).vm
+      const callback = sinon.fake()
+      vm.$on('change', callback)
+      let inputElement = vm.$el.querySelector('input')
+      let event = new Event('change')
+      inputElement.dispatchEvent(event)
+      expect(callback).to.have.been.calledWith(event)
+    })
+    it('支持 input 事件', () => {
+      const vm = mount(GInput, {}).vm
+      const callback = sinon.fake()
+      vm.$on('input', callback)
+      let inputElement = vm.$el.querySelector('input')
+      let event = new Event('input')
+      inputElement.dispatchEvent(event)
+      expect(callback).to.have.been.calledWith(event)
+    })
+    it('支持 focus 事件', () => {
+      const vm = mount(GInput, {}).vm
+      const callback = sinon.fake()
+      vm.$on('focus', callback)
+      let inputElement = vm.$el.querySelector('input')
+      let event = new Event('focus')
+      inputElement.dispatchEvent(event)
+      expect(callback).to.have.been.calledWith(event)
+    })
+    it('支持 blur 事件', () => {
+      const vm = mount(GInput, {}).vm
+      const callback = sinon.fake()
+      vm.$on('blur', callback)
+      let inputElement = vm.$el.querySelector('input')
+      let event = new Event('blur')
+      inputElement.dispatchEvent(event)
+      expect(callback).to.have.been.calledWith(event)
+    })
+  })
+
   // it("点击 button 触发 click 事件.", () => {
   //   const wrapper = mount(GuaButton, {})
   //   const vm = wrapper.vm
