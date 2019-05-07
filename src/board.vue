@@ -1,6 +1,10 @@
 <template>
   <div id="board">
-    <g-input />
+    <g-input value="gua张三" />
+    <g-input value="gua张三" />
+    <g-input value="gua张三" disabled />
+    <g-input value="gua张三" readonly />
+    <g-input value="gua张三" error="姓名不能超过五个字" />
   </div>
 </template>
 
@@ -22,6 +26,9 @@ export default {
 <style lang="scss" scoped>
 #board {
   padding: 60px;
+  .magua-input-wrapper + .magua-input-wrapper {
+    margin-left: 8px;
+  }
 }
 </style>
 
