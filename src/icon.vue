@@ -13,7 +13,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .gua-icon {
   width: 1em;
   height: 1em;
