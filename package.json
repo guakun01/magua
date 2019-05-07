@@ -1,7 +1,6 @@
 {
   "name": "magua-ui",
-  "main": "dist/magua.umd.min.js",
-  "version": "0.0.9",
+  "main": "dist/magua.umd.min.js",  "version": "0.0.10",
   "scripts": {
     "start": "yarn serve",
     "docs:dev": "vuepress dev docs",
