@@ -21,7 +21,7 @@ export default {
   },
   methods: {
     onInputChange (val) {
-      console.log(1, val.target.value)
+      console.log(1, val)
     }
   }
 }
