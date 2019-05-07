@@ -1,6 +1,6 @@
 <template>
   <div id="board">
-    <g-input value="gua张三" />
+    <g-input @change="onInputChange"/>
     <g-input value="gua张三" />
     <g-input value="gua张三" disabled />
     <g-input value="gua张三" readonly />
@@ -19,7 +19,11 @@ export default {
   data: () => {
     return {}
   },
-  methods: {}
+  methods: {
+    onInputChange (val) {
+      console.log(1, val.target.value)
+    }
+  }
 }
 </script>
 
