@@ -1,6 +1,8 @@
 ---
 home: true
 ---
-<home></home>
 
+<ClientOnly>
+<home></home>
+</ClientOnly>
 
