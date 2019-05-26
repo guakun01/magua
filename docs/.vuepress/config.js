@@ -2,7 +2,9 @@ module.exports = {
   base: "/magua/",
   title: '麻瓜',
   description: '快看, 麻瓜ui',
+  head: [["link", { rel: "icon", href: "/logo.png" }]],
   themeConfig: {
+    logo: "/logo.png",
     nav: [
       { text: '主页', link: '/' },
       { text: '仓库地址', link: 'https://github.com/guakun01/magua' },
@@ -21,6 +23,7 @@ module.exports = {
         collapsable: false,
         children: [
           '/components/button',
+          '/components/input',
         ],
       },
     ]

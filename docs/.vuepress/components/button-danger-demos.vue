@@ -3,7 +3,7 @@
     <gua-button type="danger">默认文字</gua-button>
     <gua-button type="danger" icon="weiguijubao">默认文字</gua-button>
     <gua-button type="danger" icon="weiguijubao" icon-position="right">默认文字</gua-button>
-    <pre><code>{{ content }}</code></pre>
+    <pre><code class="html">{{ content }}</code></pre>
   </div>
 </template>
 
